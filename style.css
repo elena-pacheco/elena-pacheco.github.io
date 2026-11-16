@@ -386,7 +386,20 @@ html { scroll-behavior: smooth; }
     .collage img:nth-child(3) { grid-column: 2; grid-row: 2; }
     .collage img:nth-child(4) { grid-column: 1 / 3; grid-row: 3; height: auto; aspect-ratio: 4 / 5; object-position: 50% 25%; }
     .contacto-label { min-width: 86px; }
-    .contacto-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contacto { border-top: none; padding-top: 10px; }
+    .contacto-grid { display: flex; flex-direction: column; row-gap: 0; }
+    .contacto-izquierda, .contacto-datos { display: contents; }
+    .contacto-instagram { order: 1; margin: 26px 0 40px; }
+    .contacto-titulo { order: 2; }
+    .contacto-intro { order: 3; }
+    .contacto-datos .contacto-fila { order: 4; }
+    .contacto-datos .contacto-fila:first-child { border-top: 1px solid var(--ds-hairline); }
+    .contacto-form { order: 5; margin-top: 26px; }
+    .sobre-mi { display: flex; flex-direction: column; row-gap: 18px; }
+    .sobre-mi-texto { display: contents; }
+    .sobre-mi-texto .seccion-titulo { order: 1; margin-bottom: 0; }
+    .sobre-mi-foto { order: 2; }
+    .sobre-mi-texto p, .sobre-mi-texto h3 { order: 3; }
 }
 
 .galeria-subtitulo {
