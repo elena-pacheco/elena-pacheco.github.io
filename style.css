@@ -198,7 +198,7 @@ html { scroll-behavior: smooth; }
 /* ---------- Sobre mí ---------- */
 .sobre-mi { display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 520px); gap: 72px; align-items: center; justify-content: center; padding: 0 24px; }
 .sobre-mi-texto { max-width: 520px; }
-.sobre-mi-foto img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 0; display: block; }
+.sobre-mi-foto img { width: 100%; height: auto; border-radius: 0; display: block; }
 .sobre-mi-texto p { color: var(--ds-ink-2); font-size: 16.5px; line-height: 1.8; text-align: justify; hyphens: manual; }
 .sobre-mi-texto .seccion-titulo { margin-bottom: 14px; }
 .nota-muestra { color: var(--ambar) !important; font-size: 12.5px !important; letter-spacing: 0.04em; }
