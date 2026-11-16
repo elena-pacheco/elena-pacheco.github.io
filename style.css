@@ -453,7 +453,6 @@ html { scroll-behavior: smooth; }
     font-family: var(--ds-font-text); font-weight: 300;
     font-size: clamp(42px, 5vw, 64px); letter-spacing: 0.02em;
 }
-.galeria-banner-texto::after { content: ''; display: block; width: 58px; height: 1px; background: rgba(255,255,255,0.85); margin-top: 18px; }
 .galeria-banner-texto p { margin: 0; font-size: 16.5px; line-height: 1.55; color: rgba(255,255,255,0.94); }
 .galeria-servicio {
     display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 40px;
