@@ -100,7 +100,10 @@
    filas justificadas debajo. */
 (function () {
     var GAP = function () { return window.innerWidth <= 700 ? 6 : 10; };
-    var HBASE = function () { return window.innerWidth <= 700 ? 130 : 215; };
+    var HBASE = function (W) {
+        if (window.innerWidth <= 700) return 130;
+        return Math.min(320, Math.max(215, Math.round((W || 1248) * 0.17)));
+    };
 
     function arDe(el) { return parseFloat(el.style.getPropertyValue('--ar')) || 1; }
     function fijar(el, w, h) { el.style.width = w + 'px'; el.style.height = h + 'px'; el.style.flex = '0 0 auto'; }
@@ -161,9 +164,9 @@
             var score = Math.abs(h1 - h2) + 0.4 * (Math.abs(h1 - hBase) + Math.abs(h2 - hBase));
             if (h1 < hBase * 0.55 || h1 > hBase * 1.9) score += 1000;
             if (h2 < hBase * 0.55 || h2 > hBase * 1.9) score += 1000;
-            if (score < 1000 && (!mejor || score < mejor.score)) mejor = { a: a, h1: h1, h2: h2, hB: hB, score: score };
+            if (!mejor || score < mejor.score) mejor = { a: a, h1: h1, h2: h2, hB: hB, score: score };
         }
-        if (!mejor) { /* corte imposible: columna en filas justificadas sin destacada al lado */
+        if (!mejor) { /* sin corte posible (una sola companera): columna en filas justificadas sin destacada al lado */
             duo.style.display = 'block';
             var hGsolo = Math.min(W / arG, hBase * 2.4);
             fijar(grande, hGsolo * arG, hGsolo);
@@ -179,7 +182,7 @@
     function layout(grid) {
         var W = grid.clientWidth;
         if (!W) return;
-        var g = GAP(), hBase = HBASE();
+        var g = GAP(), hBase = HBASE(W);
         grid.style.gap = g + 'px';
         Array.prototype.forEach.call(grid.children, function (nodo) {
             if (nodo.classList.contains('collage-duo')) layoutDuo(nodo, W, g, hBase);

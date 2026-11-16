@@ -105,7 +105,7 @@ html { scroll-behavior: smooth; }
 }
 .hero-titulo {
     margin: 0;
-    font-family: var(--ds-font-text); font-weight: 350;
+    font-family: var(--ds-font-text); font-weight: 300;
     font-size: clamp(46px, 7vw, 76px); line-height: 1.12;
     letter-spacing: 0.01em;
     color: #f3eee6;
@@ -131,7 +131,7 @@ html { scroll-behavior: smooth; }
 }
 .seccion-titulo {
     margin: 0 0 22px;
-    font-family: var(--ds-font-text); font-weight: 500;
+    font-family: var(--ds-font-text); font-weight: 300;
     font-size: clamp(32px, 3.4vw, 38px); letter-spacing: 0.02em;
     color: var(--ds-ink);
 }
@@ -204,18 +204,18 @@ html { scroll-behavior: smooth; }
 .nota-muestra { color: var(--ambar) !important; font-size: 12.5px !important; letter-spacing: 0.04em; }
 
 /* ---------- Contacto ---------- */
-.contacto { border-top: 1px solid var(--ds-hairline); padding-top: 40px; }
-.contacto-titulo {
+.contacto { border-top: 1px solid var(--ds-hairline); padding-top: 56px; }
+.sitio .contacto-titulo {
     margin: 0 0 24px;
-    font-family: var(--ds-font-text); font-weight: 350;
+    font-family: var(--ds-font-text); font-weight: 300;
     font-size: clamp(36px, 6vw, 56px); line-height: 1.18;
     letter-spacing: 0.01em;
 }
 .contacto-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: start; }
-.contacto-intro { margin: 0 0 38px; color: var(--ds-ink-2); font-size: 16px; line-height: 1.75; text-align: justify; hyphens: manual; }
+.sitio .contacto-intro { margin: 0 0 48px; color: var(--ds-ink-2); font-size: 16px; line-height: 1.75; text-align: justify; hyphens: manual; }
 .contacto-datos { margin-bottom: 26px; border-top: 1px solid var(--ds-hairline); }
 .contacto-fila {
-    display: flex; gap: 18px; padding: 20px 2px;
+    display: flex; gap: 18px; padding: 26px 2px;
     border-bottom: 1px solid var(--ds-hairline);
     color: var(--ds-ink); font-size: 15px;
 }
@@ -288,7 +288,7 @@ html { scroll-behavior: smooth; }
 .volver:hover { color: var(--ambar-suave); }
 .galeria-titulo {
     margin: 0;
-    font-family: var(--ds-font-text); font-weight: 500;
+    font-family: var(--ds-font-text); font-weight: 300;
     font-size: clamp(38px, 5vw, 58px); letter-spacing: 0.02em;
     line-height: 1.22;
 }
@@ -430,7 +430,7 @@ html { scroll-behavior: smooth; }
 .galeria-banner {
     position: relative; overflow: hidden;
     width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
-    height: clamp(300px, 42vw, 470px); margin-bottom: 0;
+    height: clamp(340px, 48vw, 600px); margin-bottom: 0;
 }
 .galeria-banner img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; display: block; }
 .galeria-banner-degradado {
@@ -440,21 +440,28 @@ html { scroll-behavior: smooth; }
 .galeria-banner-texto {
     position: absolute; right: 7%; top: 50%; transform: translateY(-50%);
     max-width: 340px; color: #fff; text-align: left;
+    padding: 18px 22px;
+    background:
+        linear-gradient(rgba(239, 233, 224, 0.55), rgba(239, 233, 224, 0.55)) top right / 22px 1px,
+        linear-gradient(rgba(239, 233, 224, 0.55), rgba(239, 233, 224, 0.55)) top right / 1px 22px,
+        linear-gradient(rgba(239, 233, 224, 0.55), rgba(239, 233, 224, 0.55)) bottom left / 22px 1px,
+        linear-gradient(rgba(239, 233, 224, 0.55), rgba(239, 233, 224, 0.55)) bottom left / 1px 22px;
+    background-repeat: no-repeat;
 }
 .galeria-banner-texto h2 {
     margin: 0 0 10px; color: #fff;
     font-family: var(--ds-font-text); font-weight: 300;
-    font-size: clamp(34px, 4vw, 46px); letter-spacing: 0.02em;
+    font-size: clamp(42px, 5vw, 64px); letter-spacing: 0.02em;
 }
 .galeria-banner-texto::after { content: ''; display: block; width: 58px; height: 1px; background: rgba(255,255,255,0.85); margin-top: 18px; }
 .galeria-banner-texto p { margin: 0; font-size: 16.5px; line-height: 1.55; color: rgba(255,255,255,0.94); }
 .galeria-servicio {
-    display: grid; grid-template-columns: 220px 1fr; gap: 34px;
-    margin: 46px 0 44px; align-items: start;
+    display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 40px;
+    margin: 52px 8% 48px; align-items: start;
 }
 .galeria-servicio .etiqueta { font-size: 15px; letter-spacing: 0.3em; color: var(--grafito); margin: 5px 0 0; }
 .galeria-servicio-texto {
-    margin: 0; border-left: 1px solid #ddd8cf; padding-left: 34px;
+    margin: 0; border-left: 1px solid #ddd8cf; padding-left: 28px;
     color: var(--ds-ink-2); font-size: 17px; line-height: 1.8;
     text-align: justify; hyphens: manual;
 }
@@ -467,6 +474,7 @@ html { scroll-behavior: smooth; }
 .collage-grid > .collage-duo { flex: 0 0 100%; }
 .editorial .collage-duo { display: flex; gap: 10px; align-items: flex-start; }
 .editorial .collage-duo .collage-foto--grande { flex: 0 0 auto; }
+.collage-duo--reves .collage-col { order: -1; }
 .editorial .collage-col { flex: 1 1 auto; display: flex; flex-wrap: wrap; gap: 10px; align-content: center; }
 .editorial .collage-col::after { content: ''; flex-grow: 1000000; }
 .editorial .collage-col .collage-foto { flex: calc(var(--ar, 1) * 100) 1 calc(var(--ar, 1) * 150px); min-width: 0; height: auto; }
@@ -478,6 +486,8 @@ html { scroll-behavior: smooth; }
 .galeria-banner--izq .galeria-banner-degradado { background: linear-gradient(270deg, rgba(10,10,10,0.02) 30%, rgba(10,10,10,0.58) 78%); }
 .galeria-banner--abajo .galeria-banner-texto { left: 7%; right: auto; top: auto; bottom: 36px; transform: none; max-width: 460px; }
 .galeria-banner--abajo .galeria-banner-degradado { background: linear-gradient(0deg, rgba(10,10,10,0.6) 8%, rgba(10,10,10,0.05) 55%); }
+/* Banner sobre foto clara (retrato): degradado reforzado a la derecha para texto blanco legible */
+.galeria-banner--claro .galeria-banner-degradado { background: linear-gradient(90deg, rgba(10,10,10,0.04) 22%, rgba(10,10,10,0.42) 58%, rgba(10,10,10,0.68) 88%); }
 /* Banner con titulo al pie dentro de la foto (retrato): blanco, chico, sin tapar caras */
 .galeria-banner--pie .galeria-banner-texto { left: 7%; right: auto; top: auto; bottom: 20px; transform: none; max-width: 420px; }
 .galeria-banner--pie .galeria-banner-texto h2 { font-size: clamp(22px, 2.4vw, 30px); margin-bottom: 4px; }
@@ -490,6 +500,7 @@ html { scroll-behavior: smooth; }
 .galeria-banner--eventos > img { object-position: 50% 25%; }
 .galeria-banner--parejas > img { object-position: 50% 42%; }
 .galeria-banner--productos > img { object-position: 50% 50%; }
+.galeria-banner--retrato > img { object-position: 50% 25%; }
 @media (max-width: 767px) {
     .editorial .collage-duo { gap: 6px; }
     .editorial .collage-col { gap: 6px; }
@@ -502,13 +513,28 @@ html { scroll-behavior: smooth; }
     .galeria-banner--izq .galeria-banner-degradado { background: linear-gradient(0deg, rgba(10,10,10,0.62) 8%, rgba(10,10,10,0.08) 55%); }
 }
 @media (max-width: 767px) {
-    .galeria-banner { height: 320px; }
+    .galeria-banner { height: 380px; }
     .galeria-banner img { object-position: 62% 20%; }
     .galeria-banner-degradado { background: linear-gradient(0deg, rgba(10,10,10,0.62) 8%, rgba(10,10,10,0.08) 55%); }
+    .galeria-banner-degradado {
+        background:
+            linear-gradient(to top, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%),
+            linear-gradient(90deg, rgba(10,10,10,0.02) 30%, rgba(10,10,10,0.58) 78%);
+    }
+    .galeria-banner--claro .galeria-banner-degradado {
+        background:
+            linear-gradient(to top, rgba(10,10,10,0.62), rgba(10,10,10,0.18) 50%, rgba(10,10,10,0) 70%),
+            linear-gradient(90deg, rgba(10,10,10,0.04) 22%, rgba(10,10,10,0.42) 58%, rgba(10,10,10,0.68) 88%);
+    }
+    .galeria-banner--productos > img { object-position: 35% 50%; }
+    .galeria-banner--retrato > img { object-position: 12% 25%; }
+    .galeria-banner--retrato .galeria-banner-texto { text-align: right; }
+    .galeria-banner--retrato .galeria-banner-texto h2 { max-width: 250px; margin-left: auto; }
+    .galeria-banner--retrato .galeria-banner-texto::after { margin-left: auto; }
     .galeria-banner-texto { left: 22px; right: 22px; top: auto; bottom: 22px; transform: none; max-width: none; }
-    .galeria-banner-texto h2 { font-size: 30px; margin-bottom: 6px; }
+    .galeria-banner-texto h2 { font-size: 34px; margin-bottom: 6px; }
     .galeria-banner-texto p { font-size: 14.5px; }
-    .galeria-servicio { grid-template-columns: 1fr; gap: 12px; margin: 34px 0 30px; }
+    .galeria-servicio { grid-template-columns: 1fr; gap: 12px; margin: 38px 24px 34px; }
     .galeria-servicio-texto { border-left: none; padding-left: 0; }
     .editorial .collage-grid { gap: 6px; }
     .editorial .collage-grupo + .collage-grupo { margin-top: 44px; }
